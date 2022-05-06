@@ -1,0 +1,6 @@
+<div *ngIf="(user$ | async) as user; else loading">
+  <p>{{user | json}}</p>
+</div>
+<ng-template #loading>
+  Loading...
+</ng-template>

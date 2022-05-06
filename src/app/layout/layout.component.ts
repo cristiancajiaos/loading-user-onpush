@@ -9,16 +9,9 @@ import { environment } from 'src/environments/environment';
 })
 export class LayoutComponent implements OnInit {
 
-  result: string = '';
-
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.http.get<any>(`/users/10`).subscribe(result => {
-      this.result = JSON.stringify(result);
-    });
   }
 
 }
