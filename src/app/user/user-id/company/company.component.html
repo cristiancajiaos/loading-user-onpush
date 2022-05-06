@@ -1,0 +1,13 @@
+<div class="card" *ngIf="(user$ | async) as user; else loading">
+  <div class="card-body">
+    <h4>Company</h4>
+
+    <strong>Name:</strong> {{user.company.name}} <br />
+    <strong>Catchphrase:</strong> {{user.company.catchPhrase}} <br />
+    <strong>BS:</strong> {{user.company.bs}} <br />
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>

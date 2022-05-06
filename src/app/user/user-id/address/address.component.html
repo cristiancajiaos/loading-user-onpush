@@ -1,0 +1,21 @@
+<div class="card" *ngIf="(user$ | async) as user; else loading">
+  <div class="card-body">
+    <h4>Address</h4>
+    
+    <strong>Street:</strong> {{user.address.street}} <br />
+    <strong>Suite:</strong> {{user.address.suite}} <br />
+    <strong>City:</strong> {{user.address.city}} <br />
+    <strong>Zipcode: </strong> {{user.address.zipcode}} <br />
+
+    <hr />
+
+    <h5>Geo</h5>
+
+    <strong>Latitude: </strong> {{user.address.geo.lat}}
+    <strong>Longitude: </strong> {{user.address.geo.lng}}
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
