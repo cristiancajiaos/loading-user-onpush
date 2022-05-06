@@ -1,14 +1,23 @@
 <div *ngIf="(user$ | async) as user; else loading">
   <div class="card">
     <div class="card-body">
+      <div class="card mb-2">
+        <div class="card-body">
+          <h3>{{user.name}}</h3>
+        </div>
+      </div>
       <div class="row">
         <div class="col-12 col-lg-6">
-          <strong>ID:</strong> {{user.id}}<br/>
-          <strong>Name: </strong> {{user.name}}<br/>
-          <strong>Username: </strong> {{user.username}}<br/>
-          <strong>Email: {{user.email}}</strong><br/>
-          <strong>Phone: </strong> {{user.phone}}<br/>
-          <strong>Website: </strong> {{user.website}}
+          <div class="card">
+            <div class="card-body">
+               <strong>ID:</strong> {{user.id}}<br />
+               <strong>Name: </strong> {{user.name}}<br />
+               <strong>Username: </strong> {{user.username}}<br />
+               <strong>Email: </strong> {{user.email}}<br />
+               <strong>Phone: </strong> {{user.phone}}<br />
+               <strong>Website: </strong> {{user.website}}
+            </div>
+          </div>
         </div>
         <div class="col-12 col-lg-6">
           <app-address></app-address>
@@ -23,6 +32,10 @@
   </div>
 
 </div>
+
+<ng-template #notFound>
+  User not found
+</ng-template>
 <ng-template #loading>
   Loading...
 </ng-template>

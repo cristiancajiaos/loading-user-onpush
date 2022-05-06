@@ -1,7 +1,7 @@
 <div class="card" *ngIf="(user$ | async) as user; else loading">
   <div class="card-body">
     <h4>Address</h4>
-    
+
     <strong>Street:</strong> {{user.address.street}} <br />
     <strong>Suite:</strong> {{user.address.suite}} <br />
     <strong>City:</strong> {{user.address.city}} <br />
@@ -11,7 +11,7 @@
 
     <h5>Geo</h5>
 
-    <strong>Latitude: </strong> {{user.address.geo.lat}}
+    <strong>Latitude: </strong> {{user.address.geo.lat}} <br/>
     <strong>Longitude: </strong> {{user.address.geo.lng}}
   </div>
 </div>
