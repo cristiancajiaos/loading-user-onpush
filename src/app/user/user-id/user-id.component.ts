@@ -19,6 +19,7 @@ export class UserIdComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.user$ = this.user.currentUser;
     this.activatedRoute.params?.subscribe(params => {
       if (params['id']) {
         this.getUser(params['id']);
@@ -28,6 +29,6 @@ export class UserIdComponent implements OnInit {
   }
 
   getUser(id: string) {
-    this.user$ = this.user.getUser(id);
+    this.user.getUser(id);
   }
 }

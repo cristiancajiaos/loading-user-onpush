@@ -1,5 +1,25 @@
 <div *ngIf="(user$ | async) as user; else loading">
-  <p>{{user | json}}</p>
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <strong>ID:</strong> {{user.id}}<br/>
+          <strong>Name: </strong> {{user.name}}<br/>
+          <strong>Username: </strong> {{user.username}}<br/>
+          <strong>Email: {{user.email}}</strong><br/>
+          <strong>Phone: </strong> {{user.phone}}<br/>
+          <strong>Website: </strong> {{user.website}}
+        </div>
+        <div class="col-12 col-lg-6">
+          <h3>Address</h3>
+
+          <h3>Company</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
 <ng-template #loading>
   Loading...

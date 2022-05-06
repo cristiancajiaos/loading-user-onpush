@@ -17,7 +17,12 @@ export class UsersComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.users$ = this.user.getUsers();
+    this.users$ = this.user.currentUsers;
+    this.getUsers();
+  }
+
+  getUsers() {
+    this.user.getUsers();
   }
 
 }
